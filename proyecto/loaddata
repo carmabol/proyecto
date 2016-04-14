@@ -1,0 +1,14 @@
+load data infile 'c:\\dd.csv' INTO TABLE detalle_documento
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n';
+
+load data infile 'c:\\d.csv' INTO TABLE documento
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n';
+
+load data infile 'c:\\cl.csv' IGNORE INTO TABLE cliente
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n';
+
+--Calculos por sublineas
+SELECT SUBSTRING(E.fecha_documento,1,4) AS ano, E.tipo_documento as tipoDocumento, SUM(A.cantidad*a.valor) as totalSublinea, B.id_sublinea AS id_sublinea FROM detalle_documento A INNER JOIN documento E ON E.id=A.id_documento INNER JOIN producto B ON A.id_producto=B.id_producto WHERE E.fecha_documento >= '20130101' AND E.fecha_documento <= '20161231' AND E.id_cliente = '86006928400' GROUP BY SUBSTRING(E.fecha_documento,1,4),B.id_sublinea,E.tipo_documento ORDER BY SUBSTRING(E.fecha_documento,1,4),B.id_sublinea,E.tipo_documento

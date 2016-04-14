@@ -1,0 +1,29 @@
+html { font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
+.field { position:relative; font-family: Arial; text-transform:uppercase; 			font-weight:bold; display:inline-block; }
+    label { position:absolute; left:0; top:0; transition: all .2s linear; color:#999; font-size:10px; }
+    input { margin-top:15px; border:1px solid #999; padding:3px 2px; }
+    input:invalid + span { top:1px; opacity:0; visibility:hidden; }
+    input:valid + span { opacity:1; top:0; visibility:visible;}
+    input:focus { outline:none; }
+    input:focus + span { color:#33A; }
+
+.table {
+    border: 1px solid black;
+}  
+.pintarFilaRelacionados{
+     background:#d4e3e5;
+ }
+ .pintarFila2{
+     background:#ff0000;
+ } 
+
+body { font-size: 62.5%; }
+label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+div#users-contain { width: 350px; margin: 20px 0; }
+div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
